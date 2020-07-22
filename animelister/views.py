@@ -8,10 +8,10 @@ def index(request):
     return render(request, 'index.html')
 
 
-def search(request,):
-    query = request.GET['query']
-    anime = Anime.objects.filter(category=query)
+def search(request,id):
+
+    anime = Anime.objects.filter(category=id)
     print(anime)
 
-    return render(request,'results.html',{'query':query,'animes':anime})
+    return render(request,'results.html',{'query':id,'animes':anime})
 
