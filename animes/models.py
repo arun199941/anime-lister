@@ -13,5 +13,6 @@ class Anime(models.Model):
     seasons = models.CharField(max_length=100)
     status = models.TextField(max_length=100)
     thumb_nail = models.ImageField(upload_to='anime/images',default='')
+    tags = models.TextField(max_length='500',default='')
     realese_date= models.DateField(auto_now_add=False)
 

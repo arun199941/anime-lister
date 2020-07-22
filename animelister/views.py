@@ -13,9 +13,11 @@ def search(request):
     if var1 == 'Slice of Life':
         id = 1
         anime = Anime.objects.filter(category=id)
-      
+    elif var1 == 'Action':
+        id = 5
+        anime = Anime.objects.filter(category=id)
    
     print(anime)
 
-    return render(request,'results.html',{'query':id,'animes':anime})
+    return render(request,'results.html',{'query':var1,'animes':anime})
 
