@@ -10,7 +10,7 @@ class Anime(models.Model):
     id = models.AutoField(primary_key=True)
     category = models.ForeignKey(Category, verbose_name="Category",on_delete=models.CASCADE)
     anime = models.CharField(max_length=255, verbose_name="Anime")
-    desc = models.TextField(max_length=500, default='')
+    desc = models.TextField(max_length=1000, default='')
     seasons = models.CharField(max_length=100)
     status = models.TextField(max_length=100)
     thumb_nail = models.ImageField(upload_to='anime/images',default='')
