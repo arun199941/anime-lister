@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+{% block body %}
+<center>
+<form method='POST'>
+{% csrf_token %}
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1"name='email' required  aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputFirstName">First Name </label>                    
+    <input type="text" name='first_name' required class="form-control" id="exampleInputFirstName">    </div>
+
+  <div class="form-group">
+    <label for="exampleInputSecondName">Last Name</label>                     
+    <input type="text" name='second_name' required class="form-control" id="exampleInputLastName">      </div>
+
+<div class="form-group">                            <label for="exampleInputUserName">Username </label>                                          
+<input type="text" name='username' required class="form-control" id="exampleInputUserName">                                 </div
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" name='password'class="form-control" id="exampleInputPassword1">
+  </div>
+  <hr>
+  <button type="submit" class="btn btn-secondary">Register</button>
+  <hr>
+  {% for message in messages%}
+   {{message}}
+  {%endfor%}
+</form>
+</center> 
+{% endblock body %}
+

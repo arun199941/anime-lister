@@ -16,8 +16,9 @@ def search(request):
     elif var1 == 'Action':
         id = 5
         anime = Anime.objects.filter(category=id)
-   
-    print(anime)
+    else:
+        messages.error(request,'No such category found')
+ 
 
     return render(request,'results.html',{'query':var1,'animes':anime})
 
